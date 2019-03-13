@@ -1,6 +1,9 @@
 package com.backend.tasks.controller;
 
-import org.springframework.web.bind.annotation.RestController;
+import com.backend.tasks.entity.User;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * Implement create, read, update, delete  rest controller endpoints for user.
@@ -13,4 +16,28 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class UserController {
+    @PostMapping("/orgs/{orgId}/users")
+    private User create(@RequestBody User user) {
+        return user;
+    }
+
+    @PutMapping("/orgs/{orgId}/users/{userId}")
+    private User update(@RequestBody Long userId) {
+        return null;
+    }
+
+    @GetMapping("/orgs/{orgId}/users/{userId}")
+    private User get(@RequestBody Long orgId) {
+        return null;
+    }
+
+    @DeleteMapping("/orgs/{orgId}/users/{userId}")
+    private void delete(@RequestBody Long orgId) {
+
+    }
+
+    @GetMapping("/orgs/{orgId}/users")
+    private List<User> getAll() {
+        return null;
+    }
 }

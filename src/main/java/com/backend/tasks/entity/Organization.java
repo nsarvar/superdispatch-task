@@ -1,6 +1,8 @@
-package com.backend.tasks.repository;
+package com.backend.tasks.entity;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -12,8 +14,16 @@ import java.util.Set;
 public class Organization {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
+
+    public Organization() {
+    }
+
+    public Organization(String name) {
+        this.name = name;
+    }
 
     /**
      * Map organization with users.
@@ -21,7 +31,7 @@ public class Organization {
      * Fetch lazy, cascade all
      */
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "organization")
-    private Set<User> users;
+    private Set<User> users = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -39,11 +49,27 @@ public class Organization {
         this.name = name;
     }
 
-    /*public Set<User> getUsers() {
+    public Set<User> getUsers() {
         return users;
     }
 
     public void setUsers(Set<User> users) {
         this.users = users;
-    }*/
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Organization that = (Organization) o;
+        return Objects.equals(id, that.id) &&
+                Objects.equals(name, that.name) &&
+                Objects.equals(users, that.users);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(id, name, users);
+    }
 }

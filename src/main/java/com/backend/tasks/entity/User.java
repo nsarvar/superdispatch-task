@@ -1,6 +1,7 @@
-package com.backend.tasks.repository;
+package com.backend.tasks.entity;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 /**
  * Implement entity:
@@ -50,12 +51,29 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-//
-//    public Organization getOrganization() {
-//        return organization;
-//    }
-//
-//    public void setOrganization(Organization organization) {
-//        this.organization = organization;
-//    }
+
+    public Organization getOrganization() {
+        return organization;
+    }
+
+    public void setOrganization(Organization organization) {
+        this.organization = organization;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(id, user.id) &&
+                Objects.equals(username, user.username) &&
+                Objects.equals(password, user.password) &&
+                Objects.equals(organization, user.organization);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(id, username, password, organization);
+    }
 }
