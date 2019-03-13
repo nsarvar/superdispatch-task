@@ -1,6 +1,7 @@
 package com.backend.tasks.service.org.impl;
 
 import com.backend.tasks.entity.Organization;
+import com.backend.tasks.exception.ResourceNotFoundException;
 import com.backend.tasks.repository.OrganizationRepository;
 import com.backend.tasks.service.org.OrganizationService;
 import javassist.NotFoundException;
@@ -22,7 +23,7 @@ public class OrganizationServiceImpl implements OrganizationService {
         Optional<Organization> organization = organizationRepository.findById(id);
 
         if(!organization.isPresent())
-            throw new NotFoundException("Not found");
+            throw new ResourceNotFoundException();
 
         return organization.get();
     }
