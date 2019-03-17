@@ -1,8 +1,13 @@
 package com.backend.tasks.controller;
 
 import com.backend.tasks.entity.User;
+import com.backend.tasks.service.user.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -16,28 +21,41 @@ import java.util.List;
  */
 @RestController
 public class UserController {
+
+    @Autowired
+    UserService userService;
+
+    /**
+     * Create new user
+     *
+     * @param orgId Organization ID
+     * @param user  User object
+     * @return User
+     */
     @PostMapping("/orgs/{orgId}/users")
-    private User create(@RequestBody User user) {
-        return user;
+    private ResponseEntity<?> create(@PathVariable Long orgId, @Valid @RequestBody User user) {
+        userService.save(orgId, user);
+        return new ResponseEntity<>(user, HttpStatus.CREATED);
     }
 
     @PutMapping("/orgs/{orgId}/users/{userId}")
-    private User update(@RequestBody Long userId) {
-        return null;
+    private User update(@PathVariable Long orgId, @PathVariable Long userId, @Valid @RequestBody User user) {
+        return userService.update(userId, orgId, user);
     }
 
     @GetMapping("/orgs/{orgId}/users/{userId}")
-    private User get(@RequestBody Long orgId) {
-        return null;
+    private User get(@PathVariable Long orgId, @PathVariable Long userId) {
+        return userService.getUserById(orgId, userId);
     }
 
     @DeleteMapping("/orgs/{orgId}/users/{userId}")
-    private void delete(@RequestBody Long orgId) {
-
+    private ResponseEntity<?> delete(@PathVariable Long orgId, @PathVariable Long userId) {
+        userService.delete(userId, orgId);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     @GetMapping("/orgs/{orgId}/users")
-    private List<User> getAll() {
-        return null;
+    private List<User> getAll(@PathVariable Long orgId) {
+        return userService.getAllUsersByOrgId(orgId);
     }
 }

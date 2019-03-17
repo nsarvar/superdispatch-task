@@ -1,14 +1,13 @@
 package com.backend.tasks.service.org;
 
 import com.backend.tasks.entity.Organization;
-import javassist.NotFoundException;
+import com.backend.tasks.exception.ResourceNotFoundException;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface OrganizationService {
 
-    Organization getOrganizationById(Long id) throws NotFoundException;
+    Organization getOrganizationById(Long id) throws ResourceNotFoundException;
 
     List<Organization> getAllOrganizations();
 

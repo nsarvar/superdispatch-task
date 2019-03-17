@@ -1,6 +1,10 @@
 package com.backend.tasks.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 /**
@@ -10,9 +14,18 @@ import java.util.Objects;
  */
 @Entity
 public class User {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @NotNull
+    @NotEmpty
+    @Column(unique = true)
     private String username;
+
+    @NotNull
+    @NotEmpty
     private String password;
     /**
      * Map user with organization by org_id field.
@@ -20,7 +33,16 @@ public class User {
      */
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "org_id", nullable = false)
-    private Organization organization;
+    @JsonBackReference
+    private Organization org;
+
+    public User() {
+    }
+
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 
     public User(Long id, String username, String password) {
         this.id = id;
@@ -52,12 +74,12 @@ public class User {
         this.password = password;
     }
 
-    public Organization getOrganization() {
-        return organization;
+    public Organization getOrg() {
+        return org;
     }
 
-    public void setOrganization(Organization organization) {
-        this.organization = organization;
+    public void setOrg(Organization organization) {
+        this.org = organization;
     }
 
     @Override
@@ -67,13 +89,11 @@ public class User {
         User user = (User) o;
         return Objects.equals(id, user.id) &&
                 Objects.equals(username, user.username) &&
-                Objects.equals(password, user.password) &&
-                Objects.equals(organization, user.organization);
+                Objects.equals(password, user.password);
     }
 
     @Override
     public int hashCode() {
-
-        return Objects.hash(id, username, password, organization);
+        return Objects.hash(id, username, password);
     }
 }

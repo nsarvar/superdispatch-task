@@ -1,9 +1,15 @@
 package com.backend.tasks.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Implement entity:
@@ -14,9 +20,20 @@ import java.util.Set;
 public class Organization {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @NotNull
+    @NotEmpty
     private String name;
+    /**
+     * Map organization with users.
+     * Use OneToMany association and map by organization field in User class.
+     * Fetch lazy, cascade all
+     */
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "org")
+    @JsonManagedReference
+    private Set<User> users;
 
     public Organization() {
     }
@@ -25,13 +42,11 @@ public class Organization {
         this.name = name;
     }
 
-    /**
-     * Map organization with users.
-     * Use OneToMany association and map by organization field in User class.
-     * Fetch lazy, cascade all
-     */
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "organization")
-    private Set<User> users = new HashSet<>();
+    public Organization(String name, User... users) {
+        this.name = name;
+        this.users = Stream.of(users).collect(Collectors.toSet());
+        this.users.forEach(x->x.setOrg(this));
+    }
 
     public Long getId() {
         return id;
@@ -63,13 +78,13 @@ public class Organization {
         if (o == null || getClass() != o.getClass()) return false;
         Organization that = (Organization) o;
         return Objects.equals(id, that.id) &&
-                Objects.equals(name, that.name) &&
-                Objects.equals(users, that.users);
+                Objects.equals(name, that.name);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(id, name, users);
+        return Objects.hash(id, name);
     }
+
 }

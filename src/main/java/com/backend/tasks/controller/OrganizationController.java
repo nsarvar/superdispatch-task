@@ -2,14 +2,13 @@ package com.backend.tasks.controller;
 
 import com.backend.tasks.entity.Organization;
 import com.backend.tasks.service.org.OrganizationService;
-import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
-import java.util.Optional;
 
 /**
  * Implement create, read, update, delete  rest controller endpoints for organization.
@@ -31,7 +30,7 @@ public class OrganizationController {
      * @return
      */
     @PostMapping("/orgs")
-    private ResponseEntity<?> create(@RequestBody Organization organization) {
+    private ResponseEntity<?> create(@Valid @RequestBody Organization organization) {
         organizationService.save(organization);
         return new ResponseEntity<>(organization, HttpStatus.CREATED);
     }
@@ -42,7 +41,7 @@ public class OrganizationController {
      * @return
      */
     @PutMapping("/orgs/{orgId}")
-    private Organization update(@PathVariable Long orgId, @RequestBody Organization organization) {
+    private Organization update(@PathVariable Long orgId, @Valid @RequestBody Organization organization) {
         return organizationService.update(orgId, organization);
     }
 
@@ -51,7 +50,7 @@ public class OrganizationController {
      * @return
      */
     @GetMapping("/orgs/{orgId}")
-    private Organization get(@PathVariable Long orgId) throws NotFoundException {
+    private Organization get(@PathVariable Long orgId) {
         return organizationService.getOrganizationById(orgId);
     }
 
