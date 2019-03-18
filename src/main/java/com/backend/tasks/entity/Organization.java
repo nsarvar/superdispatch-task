@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -45,7 +44,7 @@ public class Organization {
     public Organization(String name, User... users) {
         this.name = name;
         this.users = Stream.of(users).collect(Collectors.toSet());
-        this.users.forEach(x->x.setOrg(this));
+        this.users.forEach(x -> x.setOrg(this));
     }
 
     public Long getId() {
@@ -75,16 +74,19 @@ public class Organization {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null || !(o instanceof Organization))
+            return false;
+
         Organization that = (Organization) o;
-        return Objects.equals(id, that.id) &&
-                Objects.equals(name, that.name);
+
+        if (id == null) return false;
+
+        return Objects.equals(id, that.id);
     }
 
     @Override
     public int hashCode() {
-
-        return Objects.hash(id, name);
+        return this.id.hashCode();
     }
 
 }
