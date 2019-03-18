@@ -74,19 +74,19 @@ public class Organization {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || !(o instanceof Organization))
+        if (o == null || !(o instanceof User))
             return false;
 
         Organization that = (Organization) o;
 
-        if (id == null) return false;
+        if (name == null) return false;
 
-        return Objects.equals(id, that.id);
+        return Objects.equals(name, that.name);
     }
 
     @Override
     public int hashCode() {
-        return this.id.hashCode();
+        return this.name.hashCode();
     }
 
 }

@@ -91,11 +91,11 @@ public class User {
         User user = (User) o;
         if (id == null) return false;
 
-        return Objects.equals(id, user.id);
+        return Objects.equals(username, user.username);
     }
 
     @Override
     public int hashCode() {
-        return this.id.hashCode();
+        return this.username.hashCode();
     }
 }
