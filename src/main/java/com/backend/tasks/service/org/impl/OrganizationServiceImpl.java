@@ -1,6 +1,7 @@
 package com.backend.tasks.service.org.impl;
 
 import com.backend.tasks.entity.Organization;
+import com.backend.tasks.exception.RecordExistsException;
 import com.backend.tasks.exception.ResourceNotFoundException;
 import com.backend.tasks.repository.OrganizationRepository;
 import com.backend.tasks.service.org.OrganizationService;
@@ -35,7 +36,10 @@ public class OrganizationServiceImpl implements OrganizationService {
     }
 
     @Override
-    public void save(Organization organization) {
+    public void save(Organization organization) throws RecordExistsException {
+        if (organizationRepository.findByName(organization.getName()) != null)
+            throw new RecordExistsException("Organization ("+organization.getName()+") exists!");
+
         organizationRepository.save(organization);
     }
 

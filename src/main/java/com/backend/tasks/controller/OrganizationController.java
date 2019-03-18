@@ -1,6 +1,7 @@
 package com.backend.tasks.controller;
 
 import com.backend.tasks.entity.Organization;
+import com.backend.tasks.exception.RecordExistsException;
 import com.backend.tasks.service.org.OrganizationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,7 +31,7 @@ public class OrganizationController {
      * @return
      */
     @PostMapping("/orgs")
-    private ResponseEntity<?> create(@Valid @RequestBody Organization organization) {
+    private ResponseEntity<?> create(@Valid @RequestBody Organization organization) throws RecordExistsException {
         organizationService.save(organization);
         return new ResponseEntity<>(organization, HttpStatus.CREATED);
     }
