@@ -53,6 +53,13 @@ public class UserServiceImplTest {
         assertThat(user.getId()).isNotNull();
     }
 
+    @Test(expected = RecordExistsException.class)
+    public void should_return_RecordExistsException_when_user_already_exists() throws RecordExistsException {
+        User user = new User("test_user", "12345");
+        userService.save(orgId, user);
+    }
+
+
     @Test
     public void should_update_user() throws RecordExistsException {
         User user = new User("update_test", "12345");

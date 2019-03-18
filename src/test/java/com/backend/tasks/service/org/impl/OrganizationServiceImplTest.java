@@ -2,6 +2,7 @@ package com.backend.tasks.service.org.impl;
 
 import com.backend.tasks.Application;
 import com.backend.tasks.entity.Organization;
+import com.backend.tasks.exception.RecordExistsException;
 import com.backend.tasks.exception.ResourceNotFoundException;
 import com.backend.tasks.service.org.OrganizationService;
 import org.junit.Test;
@@ -40,7 +41,7 @@ public class OrganizationServiceImplTest {
 
 
     @Test
-    public void should_create_and_check_id_is_created() {
+    public void should_create_and_check_id_is_created() throws RecordExistsException {
         Organization organization = new Organization("Yahoo!");
 
         organizationService.save(organization);
@@ -56,7 +57,7 @@ public class OrganizationServiceImplTest {
     }
 
     @Test(expected = ResourceNotFoundException.class)
-    public void should_delete_by_id_and_should_not_be_found() {
+    public void should_delete_by_id_and_should_not_be_found() throws RecordExistsException {
         Organization organization = new Organization("Yandex");
         organizationService.save(organization);
         Long orgId = organization.getId();

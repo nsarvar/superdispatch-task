@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="356f10ef-4214-4119-a5c6-bffc0b8f8de2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/backend/tasks/controller/OrganizationController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/backend/tasks/repository/OrganizationRepository.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/backend/tasks/service/org/OrganizationService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/backend/tasks/service/org/impl/OrganizationServiceImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/tasks/controller/OrganizationController.java" afterPath="$PROJECT_DIR$/src/main/java/com/backend/tasks/controller/OrganizationController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/tasks/repository/OrganizationRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/backend/tasks/repository/OrganizationRepository.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/tasks/service/org/OrganizationService.java" afterPath="$PROJECT_DIR$/src/main/java/com/backend/tasks/service/org/OrganizationService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/tasks/service/org/impl/OrganizationServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/backend/tasks/service/org/impl/OrganizationServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/backend/tasks/service/org/impl/OrganizationServiceImplTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/backend/tasks/service/org/impl/OrganizationServiceImplTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/backend/tasks/service/user/impl/UserServiceImplTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/backend/tasks/service/user/impl/UserServiceImplTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -49,18 +42,28 @@
       <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/backend/tasks/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
+            <state relative-caret-position="90">
               <caret line="37" column="34" lean-forward="true" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserServiceImplTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="OrganizationServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/backend/tasks/service/org/impl/OrganizationServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="50" column="8" lean-forward="false" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserServiceImplTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/backend/tasks/service/user/impl/UserServiceImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="69" column="29" lean-forward="false" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
+            <state relative-caret-position="446">
+              <caret line="59" column="4" lean-forward="false" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#963#964#0" expanded="true" />
@@ -68,6 +71,30 @@
                 <element signature="e#1373#1374#0" expanded="true" />
                 <element signature="e#1424#1425#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrganizationServiceImplTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/backend/tasks/service/org/impl/OrganizationServiceImplTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="482">
+              <caret line="61" column="38" lean-forward="true" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#973#974#0" expanded="true" />
+                <element signature="e#1023#1024#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="import.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/import.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="3" column="63" lean-forward="false" selection-start-line="3" selection-start-column="54" selection-end-line="3" selection-end-column="63" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -84,7 +111,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>jpa</find>
       <find>console</find>
       <find>jdbc</find>
       <find>ddl-a</find>
@@ -114,6 +140,7 @@
       <find>shouldcreate</find>
       <find>git</find>
       <find>notNull</find>
+      <find>update</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -453,16 +480,16 @@
         <option value="$PROJECT_DIR$/src/test/resources/import.sql" />
         <option value="$PROJECT_DIR$/src/test/java/com/backend/tasks/controller/UserControllerTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/backend/tasks/controller/OrganizationControllerTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/backend/tasks/service/org/impl/OrganizationServiceImplTest.java" />
         <option value="$PROJECT_DIR$/README.me" />
         <option value="$PROJECT_DIR$/src/main/java/com/backend/tasks/repository/UserRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/backend/tasks/exception/RecordExistsException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/backend/tasks/service/user/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/backend/tasks/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/backend/tasks/service/user/impl/UserServiceImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/backend/tasks/repository/OrganizationRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/backend/tasks/service/org/impl/OrganizationServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/backend/tasks/controller/OrganizationController.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/backend/tasks/service/user/impl/UserServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/backend/tasks/service/org/impl/OrganizationServiceImplTest.java" />
       </list>
     </option>
   </component>
@@ -615,6 +642,19 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="superdispatch-task" type="b2602c69:ProjectViewProjectNode" />
+              <item name="superdispatch-task" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="superdispatch-task" type="b2602c69:ProjectViewProjectNode" />
+              <item name="superdispatch-task" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -654,7 +694,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Application">
+  <component name="RunManager" selected="JUnit.UserControllerTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -850,9 +890,9 @@
     </list>
     <recent_temporary>
       <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.UserServiceImplTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.OrganizationServiceImplTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.UserControllerTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.UserControllerTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.UserServiceImplTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.OrganizationServiceImplTest" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.OrganizationControllerTest" />
       </list>
     </recent_temporary>
@@ -872,7 +912,7 @@
       <updated>1552366408989</updated>
       <workItem from="1552366411879" duration="8724000" />
       <workItem from="1552452813292" duration="65756000" />
-      <workItem from="1552880173288" duration="1368000" />
+      <workItem from="1552880173288" duration="1704000" />
     </task>
     <task id="LOCAL-00001" summary="added services, repos, controllers, tests">
       <created>1552476639771</created>
@@ -899,11 +939,11 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UserServiceImplTest - 2019.03.17 at 18h 05m 12s.xml">
-      <configuration name="UserServiceImplTest" configurationId="JUnit" />
+    <history-entry file="UserControllerTest - 2019.03.18 at 09h 04m 14s.xml">
+      <configuration name="UserControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserServiceImplTest - 2019.03.17 at 18h 05m 33s.xml">
-      <configuration name="UserServiceImplTest" configurationId="JUnit" />
+    <history-entry file="UserControllerTest - 2019.03.18 at 09h 04m 32s.xml">
+      <configuration name="UserControllerTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="UserServiceImplTest - 2019.03.17 at 18h 05m 43s.xml">
       <configuration name="UserServiceImplTest" configurationId="JUnit" />
@@ -931,11 +971,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75848000" />
+    <option name="totallyTimeSpent" value="76184000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-2" width="1920" height="1082" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -953,7 +992,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32912722" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32912722" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912722" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33017877" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1148,30 +1187,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/import.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="63" lean-forward="false" selection-start-line="3" selection-start-column="54" selection-end-line="3" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.me">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="54" lean-forward="true" selection-start-line="2" selection-start-column="54" selection-end-line="2" selection-end-column="54" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/backend/tasks/service/org/impl/OrganizationServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="65" column="8" lean-forward="false" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#915#916#0" expanded="true" />
-            <element signature="e#965#966#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1267,14 +1287,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/backend/tasks/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="37" column="34" lean-forward="true" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/backend/tasks/repository/OrganizationRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -1291,14 +1303,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/backend/tasks/service/org/impl/OrganizationServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="40" column="22" lean-forward="false" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/backend/tasks/service/user/impl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -1307,16 +1311,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/backend/tasks/service/org/impl/OrganizationServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="50" column="8" lean-forward="false" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/backend/tasks/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="37" column="34" lean-forward="true" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/import.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="63" lean-forward="false" selection-start-line="3" selection-start-column="54" selection-end-line="3" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/backend/tasks/service/user/impl/UserServiceImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="69" column="29" lean-forward="false" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
+        <state relative-caret-position="446">
+          <caret line="59" column="4" lean-forward="false" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#963#964#0" expanded="true" />
             <element signature="e#1005#1006#0" expanded="true" />
             <element signature="e#1373#1374#0" expanded="true" />
             <element signature="e#1424#1425#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/backend/tasks/service/org/impl/OrganizationServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="61" column="38" lean-forward="true" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#973#974#0" expanded="true" />
+            <element signature="e#1023#1024#0" expanded="true" />
           </folding>
         </state>
       </provider>
