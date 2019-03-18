@@ -2,6 +2,7 @@ package com.backend.tasks.service.user.impl;
 
 import com.backend.tasks.Application;
 import com.backend.tasks.entity.User;
+import com.backend.tasks.exception.RecordExistsException;
 import com.backend.tasks.exception.ResourceNotFoundException;
 import com.backend.tasks.service.user.UserService;
 import org.junit.Test;
@@ -45,7 +46,7 @@ public class UserServiceImplTest {
     }
 
     @Test
-    public void should_create_user() {
+    public void should_create_user() throws RecordExistsException {
         User user = new User("create_test", "12345");
         userService.save(orgId, user);
 
@@ -53,7 +54,7 @@ public class UserServiceImplTest {
     }
 
     @Test
-    public void should_update_user() {
+    public void should_update_user() throws RecordExistsException {
         User user = new User("update_test", "12345");
         userService.save(orgId, user);
 
@@ -66,7 +67,7 @@ public class UserServiceImplTest {
     }
 
     @Test(expected = ResourceNotFoundException.class)
-    public void should_delete_user() {
+    public void should_delete_user() throws RecordExistsException {
         User user = new User("test_for_delete", "12345");
         userService.save(orgId, user);
 

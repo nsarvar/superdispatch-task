@@ -2,6 +2,7 @@ package com.backend.tasks.service.user.impl;
 
 import com.backend.tasks.entity.Organization;
 import com.backend.tasks.entity.User;
+import com.backend.tasks.exception.RecordExistsException;
 import com.backend.tasks.exception.ResourceNotFoundException;
 import com.backend.tasks.repository.OrganizationRepository;
 import com.backend.tasks.repository.UserRepository;
@@ -21,11 +22,14 @@ public class UserServiceImpl implements UserService {
     UserRepository userRepository;
 
     @Override
-    public void save(Long orgId, User user) {
+    public void save(Long orgId, User user) throws RecordExistsException {
         Optional<Organization> organization = organizationRepository.findById(orgId);
 
         if (!organization.isPresent())
             throw new ResourceNotFoundException("Organization with ID=" + orgId + " not found");
+
+        if (userRepository.findByUsername(user.getUsername()) != null)
+            throw new RecordExistsException("Username (" + user.getUsername() + ") already exists!");
 
         user.setOrg(organization.get());
         userRepository.save(user);

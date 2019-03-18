@@ -1,6 +1,7 @@
 package com.backend.tasks.controller;
 
 import com.backend.tasks.entity.User;
+import com.backend.tasks.exception.RecordExistsException;
 import com.backend.tasks.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -33,7 +34,7 @@ public class UserController {
      * @return User
      */
     @PostMapping("/orgs/{orgId}/users")
-    private ResponseEntity<?> create(@PathVariable Long orgId, @Valid @RequestBody User user) {
+    private ResponseEntity<?> create(@PathVariable Long orgId, @Valid @RequestBody User user) throws RecordExistsException {
         userService.save(orgId, user);
         return new ResponseEntity<>(user, HttpStatus.CREATED);
     }
