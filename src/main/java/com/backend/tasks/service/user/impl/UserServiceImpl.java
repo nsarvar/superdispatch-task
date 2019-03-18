@@ -46,16 +46,16 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User update(Long userId, Long orgId, User userToUpdate) {
+    public User update(Long userId, Long orgId, User user) {
         Optional<User> currentUser = userRepository.findByIdAndOrgId(userId, orgId);
 
         if (!currentUser.isPresent())
             throw new ResourceNotFoundException("User with ID=" + userId + " not found");
 
-        return currentUser.map(user -> {
-            user.setUsername(userToUpdate.getUsername());
-            user.setPassword(userToUpdate.getPassword());
-            return userRepository.save(user);
+        return currentUser.map(u -> {
+            u.setUsername(user.getUsername());
+            u.setPassword(user.getPassword());
+            return userRepository.save(u);
         }).get();
     }
 

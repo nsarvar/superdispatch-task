@@ -2,19 +2,22 @@ package com.backend.tasks.controller;
 
 import com.backend.tasks.Application;
 import com.backend.tasks.entity.Organization;
+import com.backend.tasks.repository.OrganizationRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Arrays;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -33,14 +36,29 @@ public class OrganizationControllerTest {
 
     private static final String API_URL = "/orgs/";
 
+    private Organization orgGoogle;
+    private Organization orgApple;
+
     @Autowired
     private MockMvc mockMvc;
 
     @Autowired
-    private JdbcTemplate jdbcTemplate;
+    private OrganizationRepository organizationRepository;
 
-    // converting objects to json and vice versa
+    // used for converting objects to json and vice versa
     private ObjectMapper mapper = new ObjectMapper();
+
+    /**
+     * Loading initial data
+     */
+    @Before
+    public void setup() {
+        orgGoogle = new Organization("Google");
+        orgApple = new Organization("Apple");
+
+        organizationRepository.deleteAll();
+        organizationRepository.saveAll(Arrays.asList(orgGoogle, orgApple));
+    }
 
     /**
      * Should get Organization by orgId
@@ -81,7 +99,6 @@ public class OrganizationControllerTest {
 
         createOrganization(organization)
                 .andExpect(status().isCreated())
-                .andExpect(jsonPath("$.id", is(3)))
                 .andExpect(jsonPath("$.name", is(organization.getName())));
     }
 
@@ -94,7 +111,7 @@ public class OrganizationControllerTest {
     public void shouldUpdateOrganization() throws Exception {
         Organization organization = new Organization("Apple Inc.");
 
-        updateOrganization(2L, organization)
+        updateOrganization(orgApple.getId(), organization)
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.name", is(organization.getName())));
     }
@@ -107,7 +124,7 @@ public class OrganizationControllerTest {
 
     @Test
     public void shouldDeleteOrganization() throws Exception {
-        deleteOrganization(1L)
+        deleteOrganization(orgGoogle.getId())
                 .andExpect(status().isNoContent())
                 .andExpect(content().string(""));
     }
